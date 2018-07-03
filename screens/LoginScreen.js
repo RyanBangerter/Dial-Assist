@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Image, KeyboardAvoidingView, ImageBackground} from 'react-native'
-import Loginform from './Loginform';
+import Loginform from '../components/Loginform';
 export default class Login extends Component {
   render() {
     return (

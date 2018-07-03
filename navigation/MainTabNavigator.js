@@ -6,6 +6,8 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import JournalScreen from '../screens/JournalScreen';
+import TreatmentScreen from '../screens/TreatmentScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -30,11 +32,11 @@ const LinksStack = createStackNavigator({
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Profile',
+  tabBarLabel: 'Info',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? `ios-person${focused ? '' : '-outline'}` : 'md-person'}
+      name={Platform.OS === 'ios' ? `ios-information${focused ? '' : '-outline'}` : 'md-information'}
     />
   ),
 };
@@ -53,8 +55,37 @@ SettingsStack.navigationOptions = {
   ),
 };
 
+const JournalStack = createStackNavigator({
+  Journal: JournalScreen,
+});
+
+JournalStack.navigationOptions = {
+  tabBarLabel: 'Journal',
+  tabBarIcon: ({focused}) => (
+    <TabBarIcon
+    focused={focused}
+    name={Platform.OS === 'ios' ? `ios-book ${focused ? '' : '-outline'}` : 'md-book'}
+    />
+  ),
+};
+
+const TreatmentStack = createStackNavigator({
+  Treatment: TreatmentScreen,
+});
+
+TreatmentStack.navigationOptions = {
+  tabBarLabel: 'Treatment',
+  tabBarIcon: ({focused}) => (
+    <TabBarIcon
+    focused={focused}
+    name={Platform.OS === 'ios' ? `ios-medical ${focused ? '' : '-outline'}` : 'md-medical'}
+    />
+  ),
+};
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  JournalStack,
+  TreatmentStack,
   SettingsStack,
+  LinksStack,
 });

@@ -34,7 +34,7 @@ class AuthLoadingScreen extends React.Component {
 }
 
 import MainTabNavigator from './MainTabNavigator';
-import Login from '../components/login';
+import Login from '../screens/LoginScreen';
 
 export default createSwitchNavigator({
   AuthLoading: AuthLoadingScreen,
@@ -42,7 +42,7 @@ export default createSwitchNavigator({
   Auth: Login
 },
 {
-   initialRouteName: 'Auth',
+   initialRouteName: 'Main',
 
 });
 const styles = StyleSheet.create({

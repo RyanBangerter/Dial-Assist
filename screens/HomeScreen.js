@@ -8,17 +8,19 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import Login from '../components/login';
-import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: 'Home' ,
   };
 
   render() {
     return (
-      <Login/>
+      // <Login/>
+      <ScrollView style={styles.container}>
+      {/* Go ahead and delete ExpoLinksView and replace it with your
+         * content, we just wanted to provide you with some helpful links */}
+    </ScrollView>
     );
   }
 
