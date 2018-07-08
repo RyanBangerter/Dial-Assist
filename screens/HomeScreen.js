@@ -2,8 +2,8 @@ import React from 'react';
 import {Platform,ScrollView,StyleSheet,Text,TouchableOpacity,View,Image,ImageBackground,KeyboardAvoidingView,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import { StackedAreaChart,YAxis } from 'react-native-svg-charts'
-import * as shape from 'd3-shape'
+import {  Grid, LineChart, XAxis, YAxis } from 'react-native-svg-charts'
+import {Circle} from 'react-native-svg'
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -11,72 +11,62 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
-    const data = [
-      {
-          month: new Date(2015, 0, 1),
-          apples: 3840,
-          bananas: 1920,
-          cherries: 960,
-          dates: 400,
-      },
-      {
-          month: new Date(2015, 1, 1),
-          apples: 1600,
-          bananas: 1440,
-          cherries: 960,
-          dates: 400,
-      },
-      {
-          month: new Date(2015, 2, 1),
-          apples: 640,
-          bananas: 960,
-          cherries: 3640,
-          dates: 400,
-      },
-      {
-          month: new Date(2015, 3, 1),
-          apples: 3320,
-          bananas: 480,
-          cherries: 640,
-          dates: 400,
-      },
-  ]
 
-  const colors = [ '#8800cc', '#aa00ff', '#cc66ff', '#eeccff' ]
-  const keys   = [ 'apples', 'bananas', 'cherries', 'dates' ]
-  const contentInset = { top: 20, bottom: 20 }
-  const svgs = [
-              { onPress: () => console.log('apples') },
-              { onPress: () => console.log('bananas') },
-              { onPress: () => console.log('cherries') },
-              { onPress: () => console.log('dates') },
-          ]
+    const data = [ 0, .6, 1, 2, 3, 1.1, 1.5, 2.2, .3, 1.1, 1, 3, 2, 1.1, 2 ]
+    const monthdata = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    const Decorator = ({ x, y, data }) => {
+      return data.map((value, index) => (
+          <Circle
+              key={ index }
+              cx={ x(index) }
+              cy={ y(value) }
+              r={ 4 }
+              stroke={ 'rgb(134, 65, 244)' }
+              fill={ 'white' }
+          />
+      ))
+  }
+    const axesSvg = { fontSize: 10, fill: 'black' };
+    const verticalContentInset = { top: 10, bottom: 10 }
+    const xAxisHeight = 5
 
-  return (
-    <View >
-      <StackedAreaChart
-          style={ { height: 200, paddingVertical: 16, paddingLeft: 20, paddingRight: 20 } }
-          data={ data }
-          keys={ keys }
-          colors={ colors }
-          curve={ shape.curveNatural }
-          showGrid={ false }
-          svgs={ svgs }
-      />
-      <YAxis
-                    data={ data }
-                    contentInset={ contentInset }
-                    svg={{
-                        fill: 'grey',
-                        fontSize: 10,
-                    }}
-                    numberOfTicks={ 10 }
-                    formatLabel={ (value, index) => index }
-                />
-    </View>
-      
-  )
+    return (
+      <ScrollView>
+         <View>
+           <Text>Monthly Fluid Intake</Text>
+         </View>
+        <View style={{ height: 200, padding: 20, flexDirection: 'row' }}>
+            <YAxis
+                data={data}
+                style={{ marginBottom: xAxisHeight }}
+                contentInset={verticalContentInset}
+                formatLabel={value => `${value}L`}
+                svg={axesSvg}
+            />
+            <View style={{ flex: 1, marginLeft: 16 }}>
+                <LineChart
+                    style={{ flex: 1 }}
+                    data={data}
+                    contentInset={verticalContentInset}
+                    svg={{ stroke: 'rgb(134, 65, 244)' }}
+                >
+                    <Grid/>
+                    <Decorator/>
+                </LineChart>
+                <XAxis
+                        style={{ marginHorizontal: -10, height: xAxisHeight }}
+                        data={monthdata}
+                        formatLabel={(value, index) => index}
+                        contentInset={{ left: 10, right: 10 }}
+                        svg={axesSvg}
+                    />
+            </View>
+        </View>
+      </ScrollView>
+    )
 }
+
+
     // return (
     //   // <Login/>
     //   <KeyboardAvoidingView behavior='padding' style={styles.container}>
