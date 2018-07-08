@@ -1,13 +1,9 @@
 import React from 'react';
-import {
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
+import {Platform,ScrollView,StyleSheet,Text,TouchableOpacity,View,Image,ImageBackground,KeyboardAvoidingView,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import { StackedAreaChart,YAxis } from 'react-native-svg-charts'
+import * as shape from 'd3-shape'
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -15,36 +11,93 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
-    return (
-      // <Login/>
-      <ScrollView style={styles.container}>
-      {/* Go ahead and delete ExpoLinksView and replace it with your
-         * content, we just wanted to provide you with some helpful links */}
-    </ScrollView>
-    );
+    const data = [
+      {
+          month: new Date(2015, 0, 1),
+          apples: 3840,
+          bananas: 1920,
+          cherries: 960,
+          dates: 400,
+      },
+      {
+          month: new Date(2015, 1, 1),
+          apples: 1600,
+          bananas: 1440,
+          cherries: 960,
+          dates: 400,
+      },
+      {
+          month: new Date(2015, 2, 1),
+          apples: 640,
+          bananas: 960,
+          cherries: 3640,
+          dates: 400,
+      },
+      {
+          month: new Date(2015, 3, 1),
+          apples: 3320,
+          bananas: 480,
+          cherries: 640,
+          dates: 400,
+      },
+  ]
+
+  const colors = [ '#8800cc', '#aa00ff', '#cc66ff', '#eeccff' ]
+  const keys   = [ 'apples', 'bananas', 'cherries', 'dates' ]
+  const contentInset = { top: 20, bottom: 20 }
+  const svgs = [
+              { onPress: () => console.log('apples') },
+              { onPress: () => console.log('bananas') },
+              { onPress: () => console.log('cherries') },
+              { onPress: () => console.log('dates') },
+          ]
+
+  return (
+    <View >
+      <StackedAreaChart
+          style={ { height: 200, paddingVertical: 16, paddingLeft: 20, paddingRight: 20 } }
+          data={ data }
+          keys={ keys }
+          colors={ colors }
+          curve={ shape.curveNatural }
+          showGrid={ false }
+          svgs={ svgs }
+      />
+      <YAxis
+                    data={ data }
+                    contentInset={ contentInset }
+                    svg={{
+                        fill: 'grey',
+                        fontSize: 10,
+                    }}
+                    numberOfTicks={ 10 }
+                    formatLabel={ (value, index) => index }
+                />
+    </View>
+      
+  )
+}
+    // return (
+    //   // <Login/>
+    //   <KeyboardAvoidingView behavior='padding' style={styles.container}>
+    //     <ImageBackground 
+    //     source={require('../assets/images/background.jpg')}
+    //     style ={styles.mainwallpaper}>
+    //       <View style={styles.logoContainer}>
+    //           <Image 
+    //           style={styles.logo}
+    //           source={require('../assets/images/logo3.png')}
+    //           />
+    //       </View>
+    //       <View>
+
+    //       </View>
+    //     </ImageBackground>
+    //   </KeyboardAvoidingView>
+    // );
   }
 
-  _maybeRenderDevelopmentModeWarning() {
-    if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Learn more
-        </Text>
-      );
-
-      return (
-        <Text style={styles.developmentModeText}>
-         U&Dialysis {learnMoreButton}
-        </Text>
-      );
-    } else {
-      return (
-        <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
-        </Text>
-      );
-    }
-  }
+  
 
   _handleLearnMorePress = () => {
     WebBrowser.openBrowserAsync('https://play.google.com/store?hl=en');
@@ -55,12 +108,22 @@ export default class HomeScreen extends React.Component {
       'https://healthcare.utah.edu/dialysis/'
     );
   };
-}
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  logo:{
+    width: 350,
+    height: 350
+  },
+  mainwallpaper:{
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    backgroundColor:'transparent',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -83,6 +146,11 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginTop: 3,
     marginLeft: -10,
+  },
+  logoContainer:{
+    alignItems: 'center',
+    flexGrow: 1,
+    justifyContent: 'center'
   },
   getStartedContainer: {
     alignItems: 'center',
