@@ -11,19 +11,25 @@ class WeeklyLabs extends React.PureComponent {
         const data = [
             {
                 value: 6,
-                label: 'Potassium',
+                label: 'Potassium' ,
+                svg: { fill: 'rgb(244, 160, 65)'},
+                
             },
             {
                 value: 5,
                 label: 'Phosporus',
+                svg: { fill: 'rgb(244, 223, 65)'},
+                
             },
             {
                 value: 7,
                 label: 'Albumen',
+                svg: { fill: 'rgb(244, 66, 66)'},
+                
             },
         ]
        
-
+        
 
         return (
             <View style={{ flexDirection: 'row', height: 200, paddingVertical: 16, paddingHorizontal: 10 }}>
@@ -33,18 +39,20 @@ class WeeklyLabs extends React.PureComponent {
                     scale={scale.scaleBand}
                     contentInset={{ top: 10, bottom: 10 }}
                     spacing={0.2}
-                    formatLabel={(_, index) => data[ index ].label}
+                    formatLabel={(_, index) => data[ index ].label + '\xa0' + '=' + '\xa0' + data[ index ].value} 
                 />
                 <BarChart
-                    style={{ flex: 1, marginLeft: 4 }}
+                    style={{ flex: 1, marginLeft: 10}}
                     data={data}
                     horizontal={true}
                     yAccessor={({ item }) => item.value}
-                    svg={{ fill: 'rgba(134, 65, 244, 0.8)' }}
                     contentInset={{ top: 10, bottom: 10 }}
-                    spacing={0.2}
+                    spacing={1}
                     gridMin={0}
+                    
+                    
                 >
+                   
                     <Grid direction={Grid.Direction.VERTICAL}/>
                 </BarChart>
 
