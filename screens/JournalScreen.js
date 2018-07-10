@@ -1,5 +1,15 @@
+const users = [
+  {
+     name: 'brynn',
+     avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+  }
+ ]
+ 
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
+import { View, Text, Image } from 'react-native'
+import { Card } from 'react-native-elements'
+
 
 
 export default class JournalScreen extends React.Component {
@@ -10,8 +20,22 @@ export default class JournalScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        {/* Go ahead and delete ExpoLinksView and replace it with your
-           * content, we just wanted to provide you with some helpful links */}
+        <Card title="Add Food">
+  {
+    users.map((u, i) => {
+      return (
+        <View key={i} style={styles.user}>
+          <Image
+            style={styles.image}
+            resizeMode="cover"
+            source={{ uri: u.avatar }}
+          />
+          <Text style={styles.name}>{u.name}</Text>
+        </View>
+      );
+    })
+  }
+</Card>
       </ScrollView>
     );
   }

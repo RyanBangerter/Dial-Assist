@@ -2,8 +2,9 @@ import React from 'react';
 import {Platform,ScrollView,StyleSheet,Text,TouchableOpacity,View,Image,ImageBackground,KeyboardAvoidingView,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import {  Grid, LineChart, XAxis, YAxis } from 'react-native-svg-charts'
-import {Circle} from 'react-native-svg'
+import WeeklyLabs from '../components/Labs';
+import Monthlyfluid from '../components/Monthlyfluid';
+import DailyFluid from '../components/Dailyfluid';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -12,56 +13,25 @@ export default class HomeScreen extends React.Component {
 
   render() {
 
-    const data = [ 0, .6, 1, 2, 3, 1.1, 1.5, 2.2, .3, 1.1, 1, 3, 2, 1.1, 2 ]
-    const monthdata = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-    const Decorator = ({ x, y, data }) => {
-      return data.map((value, index) => (
-          <Circle
-              key={ index }
-              cx={ x(index) }
-              cy={ y(value) }
-              r={ 4 }
-              stroke={ 'rgb(134, 65, 244)' }
-              fill={ 'white' }
-          />
-      ))
-  }
-    const axesSvg = { fontSize: 10, fill: 'black' };
-    const verticalContentInset = { top: 10, bottom: 10 }
-    const xAxisHeight = 5
-
     return (
       <ScrollView>
-         <View>
-           <Text>Monthly Fluid Intake</Text>
-         </View>
-        <View style={{ height: 200, padding: 20, flexDirection: 'row' }}>
-            <YAxis
-                data={data}
-                style={{ marginBottom: xAxisHeight }}
-                contentInset={verticalContentInset}
-                formatLabel={value => `${value}L`}
-                svg={axesSvg}
-            />
-            <View style={{ flex: 1, marginLeft: 16 }}>
-                <LineChart
-                    style={{ flex: 1 }}
-                    data={data}
-                    contentInset={verticalContentInset}
-                    svg={{ stroke: 'rgb(134, 65, 244)' }}
-                >
-                    <Grid/>
-                    <Decorator/>
-                </LineChart>
-                <XAxis
-                        style={{ marginHorizontal: -10, height: xAxisHeight }}
-                        data={monthdata}
-                        formatLabel={(value, index) => index}
-                        contentInset={{ left: 10, right: 10 }}
-                        svg={axesSvg}
-                    />
+            {/* Daily fluid intake graph */}
+            <View>
+              <Text>Daily Fluid Intake</Text>
             </View>
+            <DailyFluid/>
+          
+
+        {/* monthly fluid intake graph */}
+        <View>
+          <Text>Weekly Fluid Intake</Text>
         </View>
+        <Monthlyfluid/>
+        
+        <View>
+          <Text>Weekly Labs</Text>
+        </View>
+        <WeeklyLabs/>
       </ScrollView>
     )
 }
