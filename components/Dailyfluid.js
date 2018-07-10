@@ -7,7 +7,7 @@ class DailyFluid extends React.PureComponent {
 
         return (
             <ProgressCircle
-                style={ { height: 200 } }
+                style={ { height: 200, marginTop: 10 } }
                 progress={ 0.7 }
                 progressColor={'rgb(43, 79, 155)'}
                 startAngle={ -Math.PI * 0.8 }

@@ -7,8 +7,10 @@ const users = [
  
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { View, Text, Image } from 'react-native'
-import { Card } from 'react-native-elements'
+import { View, Text, Image } from 'react-native';
+import { Card } from 'react-native-elements';
+import Dailyfluid from '../components/Dailyfluid';
+import { Icon } from 'react-native-elements';
 
 
 
@@ -20,22 +22,25 @@ export default class JournalScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Card title="Add Food">
-  {
-    users.map((u, i) => {
-      return (
-        <View key={i} style={styles.user}>
-          <Image
-            style={styles.image}
-            resizeMode="cover"
-            source={{ uri: u.avatar }}
-          />
-          <Text style={styles.name}>{u.name}</Text>
-        </View>
-      );
-    })
-  }
-</Card>
+        {/* Daily fluid intake graph */}
+            <View style = {{marginTop: 10}}>
+                <Text style = {{textAlign: 'center', fontSize: 20}}>Daily Fluid Intake In Liters</Text>
+            </View>
+            <Dailyfluid/>
+            <View style = {{paddingBottom: 90}}>
+                <Text style = {{textAlign: 'center'}}>Fluid Goal = 1L or 32FLoz</Text>
+            </View>
+            <Card title="Food">
+                <View>
+                    <Text>Add Food</Text>
+                </View>
+            </Card>
+            <Card title="Fluid">
+                <View>
+                    <Text>Add Fluid </Text>
+                    <Icon name='local-drink'/>
+                </View>
+            </Card>
       </ScrollView>
     );
   }

@@ -22,16 +22,18 @@ export default class HomeScreen extends React.Component {
             <DailyFluid/>
           
 
-        {/* monthly fluid intake graph */}
-        <View  style = {{marginTop: 10}}>
-          <Text style = {{textAlign: 'center'}}>Weekly Fluid Intake In Liters</Text>
-        </View>
-        <Weeklyfluid/>
+            {/* weeklyfluid fluid intake graph */}
+            <View  style = {{marginTop: 10}}>
+              <Text style = {{textAlign: 'center'}}>Weekly Fluid Intake In Liters</Text>
+            </View>
+            <Weeklyfluid/>
         
-        <View style = {{marginTop: 10}}>
-          <Text style = {{textAlign: 'center'}}>Weekly Labs</Text>
-        </View>
-        <WeeklyLabs/>
+
+            {/* weeklyLabs graph */}
+            <View style = {{marginTop: 10}}>
+              <Text style = {{textAlign: 'center'}}>Weekly Labs</Text>
+            </View>
+            <WeeklyLabs/>
       </ScrollView>
     )
 }
