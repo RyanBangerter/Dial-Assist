@@ -3,7 +3,7 @@ import {Platform,ScrollView,StyleSheet,Text,TouchableOpacity,View,Image,ImageBac
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import WeeklyLabs from '../components/Labs';
-import Monthlyfluid from '../components/Monthlyfluid';
+import Weeklyfluid from '../components/WeeklyFluid';
 import DailyFluid from '../components/Dailyfluid';
 
 export default class HomeScreen extends React.Component {
@@ -16,22 +16,24 @@ export default class HomeScreen extends React.Component {
     return (
       <ScrollView>
             {/* Daily fluid intake graph */}
-            <View>
-              <Text>Daily Fluid Intake</Text>
+            <View style = {{marginTop: 10}}>
+              <Text style = {{textAlign: 'center'}}>Daily Fluid Intake In Liters</Text>
             </View>
             <DailyFluid/>
           
 
-        {/* monthly fluid intake graph */}
-        <View>
-          <Text>Weekly Fluid Intake</Text>
-        </View>
-        <Monthlyfluid/>
+            {/* weeklyfluid fluid intake graph */}
+            <View  style = {{marginTop: 10}}>
+              <Text style = {{textAlign: 'center'}}>Weekly Fluid Intake In Liters</Text>
+            </View>
+            <Weeklyfluid/>
         
-        <View>
-          <Text>Weekly Labs</Text>
-        </View>
-        <WeeklyLabs/>
+
+            {/* weeklyLabs graph */}
+            <View style = {{marginTop: 10}}>
+              <Text style = {{textAlign: 'center'}}>Weekly Labs</Text>
+            </View>
+            <WeeklyLabs/>
       </ScrollView>
     )
 }
