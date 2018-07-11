@@ -64,7 +64,7 @@ JournalStack.navigationOptions = {
   tabBarIcon: ({focused}) => (
     <TabBarIcon
     focused={focused}
-    name={Platform.OS === 'ios' ? `ios-book ${focused ? '' : '-outline'}` : 'md-book'}
+    name={Platform.OS === 'ios' ? `ios-book${focused ? '' : '-outline'}` : 'md-book'}
     />
   ),
 };
@@ -78,7 +78,7 @@ TreatmentStack.navigationOptions = {
   tabBarIcon: ({focused}) => (
     <TabBarIcon
     focused={focused}
-    name={Platform.OS === 'ios' ? `ios-medical ${focused ? '' : '-outline'}` : 'md-medical'}
+    name={Platform.OS === 'ios' ? `ios-medical${focused ? '' : '-outline'}` : 'md-medical'}
     />
   ),
 };
