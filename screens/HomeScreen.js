@@ -1,48 +1,65 @@
 import React from 'react';
-import {
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
+import {Platform,ScrollView,StyleSheet,Text,TouchableOpacity,View,Image,ImageBackground,KeyboardAvoidingView,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import Login from '../components/login';
-import { MonoText } from '../components/StyledText';
+import WeeklyLabs from '../components/Labs';
+import Weeklyfluid from '../components/WeeklyFluid';
+import DailyFluid from '../components/Dailyfluid';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: 'Home' ,
   };
 
   render() {
+
     return (
-      <Login/>
-    );
+      <ScrollView>
+            {/* Daily fluid intake graph */}
+            <View style = {{marginTop: 10}}>
+              <Text style = {{textAlign: 'center'}}>Daily Fluid Intake In Liters</Text>
+            </View>
+            <DailyFluid/>
+          
+
+            {/* weeklyfluid fluid intake graph */}
+            <View  style = {{marginTop: 10}}>
+              <Text style = {{textAlign: 'center'}}>Weekly Fluid Intake In Liters</Text>
+            </View>
+            <Weeklyfluid/>
+        
+
+            {/* weeklyLabs graph */}
+            <View style = {{marginTop: 10}}>
+              <Text style = {{textAlign: 'center'}}>Weekly Labs</Text>
+            </View>
+            <WeeklyLabs/>
+      </ScrollView>
+    )
+}
+
+
+    // return (
+    //   // <Login/>
+    //   <KeyboardAvoidingView behavior='padding' style={styles.container}>
+    //     <ImageBackground 
+    //     source={require('../assets/images/background.jpg')}
+    //     style ={styles.mainwallpaper}>
+    //       <View style={styles.logoContainer}>
+    //           <Image 
+    //           style={styles.logo}
+    //           source={require('../assets/images/logo3.png')}
+    //           />
+    //       </View>
+    //       <View>
+
+    //       </View>
+    //     </ImageBackground>
+    //   </KeyboardAvoidingView>
+    // );
   }
 
-  _maybeRenderDevelopmentModeWarning() {
-    if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Learn more
-        </Text>
-      );
-
-      return (
-        <Text style={styles.developmentModeText}>
-         U&Dialysis {learnMoreButton}
-        </Text>
-      );
-    } else {
-      return (
-        <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
-        </Text>
-      );
-    }
-  }
+  
 
   _handleLearnMorePress = () => {
     WebBrowser.openBrowserAsync('https://play.google.com/store?hl=en');
@@ -53,12 +70,22 @@ export default class HomeScreen extends React.Component {
       'https://healthcare.utah.edu/dialysis/'
     );
   };
-}
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  logo:{
+    width: 350,
+    height: 350
+  },
+  mainwallpaper:{
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    backgroundColor:'transparent',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -81,6 +108,11 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginTop: 3,
     marginLeft: -10,
+  },
+  logoContainer:{
+    alignItems: 'center',
+    flexGrow: 1,
+    justifyContent: 'center'
   },
   getStartedContainer: {
     alignItems: 'center',
