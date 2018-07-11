@@ -35,11 +35,15 @@ class AuthLoadingScreen extends React.Component {
 
 import MainTabNavigator from './MainTabNavigator';
 import Login from '../screens/LoginScreen';
+import Fluidcardscreen from '../screens/Fluidcardscreen';
+import Foodcardscreen from '../screens/Foodcardscreen';
 
 export default createSwitchNavigator({
   AuthLoading: AuthLoadingScreen,
   Main: MainTabNavigator,
-  Auth: Login
+  Auth: Login,
+  Fluidcard: Fluidcardscreen,
+  Foodcard: Foodcardscreen
 },
 {
    initialRouteName: 'Main',

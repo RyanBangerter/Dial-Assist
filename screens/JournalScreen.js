@@ -4,13 +4,12 @@ const users = [
      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
   }
  ]
- 
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { View, Text, Image } from 'react-native';
 import { Card } from 'react-native-elements';
 import Dailyfluid from '../components/Dailyfluid';
-import { Icon } from 'react-native-elements';
+
 
 
 
@@ -20,6 +19,7 @@ export default class JournalScreen extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
         {/* Daily fluid intake graph */}
@@ -32,19 +32,24 @@ export default class JournalScreen extends React.Component {
             </View>
             <Card title="Food">
                 <View>
-                    <Text>Add Food</Text>
+                  <TouchableOpacity onPress={() =>navigate('Foodcard')}>
+                      <Text>Add Food </Text>
+                  </TouchableOpacity>  
                 </View>
             </Card>
             <Card title="Fluid">
                 <View>
-                    <Text>Add Fluid </Text>
-                    <Icon name='local-drink'/>
+                  <TouchableOpacity onPress={() =>navigate('Fluidcard')}>
+                      <Text>Add Fluid </Text>
+                  </TouchableOpacity>  
                 </View>
             </Card>
       </ScrollView>
     );
   }
 }
+// _addFood = () => {this.props.navigation.navigate('Foodcard')};
+// _addFluid = () => {this.props.navigation.navigate('Fluidcard')}
 
 const styles = StyleSheet.create({
   container: {
