@@ -8,15 +8,8 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import JournalScreen from '../screens/JournalScreen';
 import TreatmentScreen from '../screens/TreatmentScreen';
-import Fluidcardscreen from '../screens/Fluidcardscreen';
-import Foodcardscreen from '../screens/Foodcardscreen';
 
-const FluidcardStack = createStackNavigator({
-    Fluidcard: Fluidcardscreen,
-});
-const FoodcardStack = createStackNavigator({
-    Foodcard: Foodcardscreen,
-});
+
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });

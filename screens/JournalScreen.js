@@ -22,14 +22,28 @@ export default class JournalScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
+       
         {/* Daily fluid intake graph */}
             <View style = {{marginTop: 10}}>
                 <Text style = {{textAlign: 'center', fontSize: 20}}>Daily Fluid Intake In Liters</Text>
             </View>
             <Dailyfluid/>
-            <View style = {{paddingBottom: 90}}>
+            <View style = {{paddingBottom: 50}}>
                 <Text style = {{textAlign: 'center'}}>Fluid Goal = 1L or 32FLoz</Text>
             </View>
+        {/* Labs */}
+            <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 45, paddingRight: 50}}>
+              <Text >__</Text>
+              <Text >__</Text>
+              <Text >__</Text>
+            </View>
+            <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 50, paddingRight: 50}}>
+              <Text >K</Text>
+              <Text >P</Text>
+              <Text >AL</Text>
+            </View>
+
+        {/* Cards */}
             <Card title="Food">
                 <View>
                   <TouchableOpacity onPress={() =>navigate('Foodcard')}>

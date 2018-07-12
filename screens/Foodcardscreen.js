@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity, View, Text} from 'react-native';
-import { Card } from 'react-native-elements';
+import { Card, SearchBar } from 'react-native-elements';
 
 
 export default class Foodcardscreen extends React.Component {
@@ -13,6 +13,13 @@ export default class Foodcardscreen extends React.Component {
     return (
       <ScrollView style={styles.container}>
         <View>
+          <View style = {{marginTop: 10}}>
+            <SearchBar
+              lightTheme
+              // onChangeText={someMethod}
+              // onClearText={someMethod}
+              placeholder='Type Here...' />
+          </View>
             <Card title="Go Back Test">
                 <View>
                   <TouchableOpacity onPress={() =>navigate('Journal')}>

@@ -1,6 +1,7 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-
+import { Card } from 'react-native-elements';
+import {ScrollView, View, TouchableOpacity, Text} from 'react-native';
+import { WebBrowser } from 'expo';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
@@ -9,18 +10,52 @@ export default class LinksScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.container}>
-        {/* Go ahead and delete ExpoLinksView and replace it with your
-           * content, we just wanted to provide you with some helpful links */}
+      <ScrollView>
+        <View>
+          <Card title="Problems During Dialysis?">
+                <View>
+                  <TouchableOpacity onPress={_handleProblems}>
+                      <Text>Help</Text>
+                  </TouchableOpacity>  
+                </View>
+          </Card>
+          <Card title="Transplant Questions?">
+                <View>
+                  <TouchableOpacity onPress={_handleTransplant}>
+                      <Text>Help</Text>
+                  </TouchableOpacity>  
+                </View>
+          </Card>
+          <Card title="Medication Questions?">
+                <View>
+                  <TouchableOpacity onPress={_handleMedication}>
+                      <Text>Help</Text>
+                  </TouchableOpacity>  
+                </View>
+          </Card>
+          <Card title="General Dialysis Questions?">
+                <View>
+                  <TouchableOpacity onPress={_handleGeneral}>
+                      <Text>Help</Text>
+                  </TouchableOpacity>  
+                </View>
+          </Card>
+        </View>
       </ScrollView>
-    );
+   )
   }
 }
+  _handleProblems = () => {
+    WebBrowser.openBrowserAsync('http://www.wisconsindialysis.org/kidney-health/');
+  };
+  _handleTransplant = () => {
+    WebBrowser.openBrowserAsync('https://www.kidney.org/atoz/atozTopic_Transplantation');
+  };
+  _handleMedication = () => {
+    WebBrowser.openBrowserAsync('https://www.rxlist.com/pill-identification-tool/article.htm');
+  };
+  _handleGeneral = () => {
+    WebBrowser.openBrowserAsync('https://www.kidney.org/kidneydisease');
+  };
+  
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
-  },
-});
