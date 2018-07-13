@@ -9,6 +9,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import JournalScreen from '../screens/JournalScreen';
 import TreatmentScreen from '../screens/TreatmentScreen';
 
+
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
@@ -64,7 +65,7 @@ JournalStack.navigationOptions = {
   tabBarIcon: ({focused}) => (
     <TabBarIcon
     focused={focused}
-    name={Platform.OS === 'ios' ? `ios-book ${focused ? '' : '-outline'}` : 'md-book'}
+    name={Platform.OS === 'ios' ? `ios-book${focused ? '' : '-outline'}` : 'md-book'}
     />
   ),
 };
@@ -78,14 +79,15 @@ TreatmentStack.navigationOptions = {
   tabBarIcon: ({focused}) => (
     <TabBarIcon
     focused={focused}
-    name={Platform.OS === 'ios' ? `ios-medical ${focused ? '' : '-outline'}` : 'md-medical'}
+    name={Platform.OS === 'ios' ? `ios-medical${focused ? '' : '-outline'}` : 'md-medical'}
     />
   ),
 };
+
 export default createBottomTabNavigator({
   HomeStack,
   JournalStack,
   TreatmentStack,
   SettingsStack,
-  LinksStack,
+  LinksStack
 });
