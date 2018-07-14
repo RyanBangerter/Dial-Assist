@@ -89,6 +89,7 @@ TreatmentStack.navigationOptions = {
   ),
 };
 
+
 export default createBottomTabNavigator({
   HomeStack,
   JournalStack,
