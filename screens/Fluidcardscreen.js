@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity, View, Text} from 'react-native';
-import { Card, Header,SearchBar } from 'react-native-elements';
+import { Card, Header,SearchBar, Icon } from 'react-native-elements';
 
 
 
@@ -21,17 +21,36 @@ export default class Fluidcardscreen extends React.Component {
         />
         
         <View>
-          <View style = {{marginTop: 10}}>
+          <View>
             <SearchBar
               lightTheme
               // onChangeText={someMethod}
               // onClearText={someMethod}
               placeholder='Type Here...' />
           </View>
-            <Card title="Go Back Test">
+          <View style = {{flexDirection: 'row', justifyContent: 'space-evenly'}}>
+              <Card title="Scan Barcode">
+                  <View style={{width: 110}}>
+                    <TouchableOpacity onPress={() =>navigate('')}>
+                        <Icon name='camera-alt' />
+                    </TouchableOpacity>  
+                  </View>
+              </Card>
+              <Card title="Categories">
+                  <View style={{width: 110}}>
+                    <TouchableOpacity onPress={() =>navigate('')}>
+                        <Icon name='list'/>
+                    </TouchableOpacity>  
+                  </View>
+              </Card>
+          </View>
+            <Card title="Other Tracking Methods">
                 <View>
                   <TouchableOpacity onPress={() =>navigate('Journal')}>
-                      <Text>Go Back To Journal</Text>
+                      <Text>Recent</Text>
+                      <Text>Frequent</Text>
+                      <Text>Favorites</Text>
+                      <Text>Create New</Text>
                   </TouchableOpacity>  
                 </View>
             </Card>
