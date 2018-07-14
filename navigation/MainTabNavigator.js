@@ -8,21 +8,15 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import JournalScreen from '../screens/JournalScreen';
 import TreatmentScreen from '../screens/TreatmentScreen';
-import Fluidcardscreen from '../screens/Fluidcardscreen';
-import Foodcardscreen from '../screens/Foodcardscreen';
 
-const FluidcardStack = createStackNavigator({
-    Fluidcard: Fluidcardscreen,
-});
-const FoodcardStack = createStackNavigator({
-    Foodcard: Foodcardscreen,
-});
+
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
+  header: 'null',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -41,6 +35,7 @@ const LinksStack = createStackNavigator({
 
 LinksStack.navigationOptions = {
   tabBarLabel: 'Info',
+  header: 'null',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -55,6 +50,7 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Settings',
+  header: 'null',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -69,6 +65,7 @@ const JournalStack = createStackNavigator({
 
 JournalStack.navigationOptions = {
   tabBarLabel: 'Journal',
+  header: 'null',
   tabBarIcon: ({focused}) => (
     <TabBarIcon
     focused={focused}
@@ -83,6 +80,7 @@ const TreatmentStack = createStackNavigator({
 
 TreatmentStack.navigationOptions = {
   tabBarLabel: 'Treatment',
+  header: 'null',
   tabBarIcon: ({focused}) => (
     <TabBarIcon
     focused={focused}
