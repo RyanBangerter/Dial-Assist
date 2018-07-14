@@ -22,7 +22,7 @@ export default class Login extends Component {
               </TouchableOpacity>
               <Text style={styles.text}>Got a Dial-Assist account?</Text>
               <TouchableOpacity style={styles.buttonContainer}>
-                  <Text style={styles.buttonText} onPress={() =>navigate('Generalagreement')}>Login</Text>
+                  <Text style={styles.buttonText} onPress={() =>navigate('Main')}>Login</Text>
               </TouchableOpacity>
             </View>
           </View>
