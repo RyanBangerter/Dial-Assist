@@ -33,12 +33,6 @@ export default class TreatmentScreen extends React.Component {
         <FormLabel>Actual Fluid To Remove</FormLabel>
           <FormInput onChangeText={_Afluid}  placeholder='Fluid in L' />
           <FormValidationMessage>Error message</FormValidationMessage>
-          <Button 
-          backgroundColor= '#2f95dc'
-          raised
-          title='Submit' />
-
-          
         <View style = {{marginTop: 10}}>
           <Text style = {{textAlign: 'center'}}>After Dialysis</Text>
         </View>
