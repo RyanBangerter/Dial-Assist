@@ -59,7 +59,7 @@ export default class JournalScreen extends React.Component {
                 </View>
             </Card>
             <Card title="Fluid">
-                <View>
+                <View style={{marginBottom: 10}}>
                   <TouchableOpacity onPress={() =>navigate('Fluidcard')}>
                       <Text>Add Fluid </Text>
                   </TouchableOpacity>  
