@@ -13,6 +13,12 @@ export default class Fluidcardscreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
+       <Header
+          leftComponent={{ icon: 'home', color: '#fff' }}
+          backgroundColor= '#2f95dc'
+          centerComponent={{ text: 'Home', style: { color: '#fff' } }}
+          rightComponent={{icon: 'exit-to-app', color: '#fff'}}
+        />
         
         <View>
           <View style = {{marginTop: 10}}>
@@ -38,7 +44,6 @@ export default class Fluidcardscreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
     backgroundColor: '#fff',
   },
 });

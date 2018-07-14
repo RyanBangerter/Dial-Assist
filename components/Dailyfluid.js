@@ -1,4 +1,5 @@
 import React from 'react'
+import {Text, View} from 'react-native'
 import { ProgressCircle } from 'react-native-svg-charts'
 
 class DailyFluid extends React.PureComponent {

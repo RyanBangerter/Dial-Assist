@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity, View, Text} from 'react-native';
-import { Card, SearchBar } from 'react-native-elements';
+import { Card, SearchBar, Header} from 'react-native-elements';
 
 
 export default class Foodcardscreen extends React.Component {
@@ -12,6 +12,12 @@ export default class Foodcardscreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
+       <Header
+          leftComponent={{ icon: 'home', color: '#fff' }}
+          backgroundColor= '#2f95dc'
+          centerComponent={{ text: 'Home', style: { color: '#fff' } }}
+          rightComponent={{icon: 'exit-to-app', color: '#fff'}}
+        />
         <View>
           <View style = {{marginTop: 10}}>
             <SearchBar
@@ -36,7 +42,6 @@ export default class Foodcardscreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
     backgroundColor: '#fff',
   },
 });
