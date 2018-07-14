@@ -1,15 +1,22 @@
 import React from 'react';
 import { Avatar, Card } from 'react-native-elements';
-import {ScrollView, View, TouchableOpacity, Text} from 'react-native';
+import {ScrollView, View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import { Header } from 'react-native-elements';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Settings',
+    header: null,
   };
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={styles.container}>
+         <Header
+          backgroundColor= '#2f95dc'
+          leftComponent={{ icon: 'home', color: '#fff' }}
+          centerComponent={{ text: 'Settings', style: { color: '#fff' } }}
+          rightComponent={{icon: 'exit-to-app', color: '#fff'}}
+        />
         <View style={{marginLeft: 10, marginTop: 10}}>
           <Avatar
             xlarge
@@ -46,3 +53,9 @@ export default class SettingsScreen extends React.Component {
    )
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+});

@@ -4,7 +4,7 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 export default class useragreementscreen extends React.Component {
   static navigationOptions = {
-    title: 'Useragreement',
+    header: null,
   };
 
   render() {
