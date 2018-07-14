@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes) {
         date: {
             type: DataTypes.DATEONLY,
             allowNull: false,
-            unique: true
         },
         //fluid in liters
         fluid: {
@@ -23,5 +22,15 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.DOUBLE,
             defaultValue: 0
         }
-    })
+    });
+
+    Day.associate = function(models) {
+        Day.belongsTo(models.Patient, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    }
+
+    return Day;
 }

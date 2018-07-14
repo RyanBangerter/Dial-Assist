@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 //var path = require("path");
 const passport = require('passport');
 const session = require('express-session');
-const routes = require('./routes');
+// const routes = require('./routes');
 
 
 //initialization
@@ -34,12 +34,11 @@ app.use(passport.session());
 
 
 //routing
-app.use(routes);
-
+// app.use(routes);
 
 
 //load passport strategies
-require("./config/passport.js")(passport, db.Customer);
+//require("./config/passport.js")(passport, db.Customer);
 
 
 
