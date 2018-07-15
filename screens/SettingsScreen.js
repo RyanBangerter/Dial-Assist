@@ -1,6 +1,6 @@
 import React from 'react';
 import { Avatar, Card } from 'react-native-elements';
-import {ScrollView, View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {ScrollView, View, TouchableOpacity, Text, StyleSheet, ImageBackground} from 'react-native';
 import { Header } from 'react-native-elements';
 
 export default class SettingsScreen extends React.Component {
@@ -17,6 +17,9 @@ export default class SettingsScreen extends React.Component {
           centerComponent={{ text: 'Settings', style: { color: '#fff' } }}
           rightComponent={{icon: 'exit-to-app', color: '#fff'}}
         />
+        <ImageBackground 
+        source={require('../assets/images/background.jpg')}
+        style ={styles.mainwallpaper}>
         <View style={{marginLeft: 10, marginTop: 10}}>
           <Avatar
             xlarge
@@ -26,7 +29,7 @@ export default class SettingsScreen extends React.Component {
             activeOpacity={0.7}
           />
         </View>
-        <View>
+        <View style={{marginBottom: 120}}>
           <Card title="Profile Name">
                 <View>
                   <TouchableOpacity onPress={() =>navigate('Foodcard')}>
@@ -49,6 +52,7 @@ export default class SettingsScreen extends React.Component {
                 </View>
           </Card>
         </View>
+      </ImageBackground>
       </ScrollView>
    )
   }
@@ -57,5 +61,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  mainwallpaper:{
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    backgroundColor:'transparent',
   },
 });

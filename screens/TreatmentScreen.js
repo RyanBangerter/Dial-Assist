@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, KeyboardAvoidingView, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, KeyboardAvoidingView, Text, View, ImageBackground } from 'react-native';
 import { FormLabel, FormInput, FormValidationMessage, Button } from 'react-native-elements'
 import { Header } from 'react-native-elements';
 
@@ -20,6 +20,9 @@ export default class TreatmentScreen extends React.Component {
           centerComponent={{ text: 'Treatment', style: { color: '#fff' } }}
           rightComponent={{icon: 'exit-to-app', color: '#fff'}}
         />
+        <ImageBackground 
+        source={require('../assets/images/background.jpg')}
+        style ={styles.mainwallpaper}>
         <View>
           <Text style = {{textAlign: 'center'}}>Before Dialysis</Text>
         </View>
@@ -50,7 +53,7 @@ export default class TreatmentScreen extends React.Component {
           backgroundColor= '#2f95dc'
           raised
           title='Submit' />
-
+      </ImageBackground>
       </KeyboardAvoidingView>
     );
   }
@@ -68,5 +71,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  mainwallpaper:{
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    backgroundColor:'transparent',
   },
 });

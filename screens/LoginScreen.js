@@ -18,7 +18,7 @@ export default class Login extends Component {
             <View>
               <StatusBar hidden={true}/>
               <TouchableOpacity style={styles.buttonContainer}>
-                    <Text style={styles.buttonText} onPress={() =>navigate('Generalagreement')}>Sign Up</Text>
+                    <Text style={styles.buttonText} onPress={() =>navigate('signupscreen')}>Sign Up</Text>
               </TouchableOpacity>
               <Text style={styles.text}>Got a Dial-Assist account?</Text>
               <TouchableOpacity style={styles.buttonContainer}>
