@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'react-native-elements';
-import {ScrollView, View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {ScrollView, View, TouchableOpacity, Text, StyleSheet,ImageBackground} from 'react-native';
 import { WebBrowser } from 'expo';
 import { Header } from 'react-native-elements';
 
@@ -18,7 +18,10 @@ export default class LinksScreen extends React.Component {
           centerComponent={{ text: 'Links', style: { color: '#fff' } }}
           rightComponent={{icon: 'exit-to-app', color: '#fff'}}
         />
-        <View>
+        <ImageBackground 
+        source={require('../assets/images/background.jpg')}
+        style ={styles.mainwallpaper}>
+        <View style={{marginBottom: 160}}>
           <Card title="Problems During Dialysis?">
                 <View>
                   <TouchableOpacity onPress={_handleProblems}>
@@ -48,6 +51,7 @@ export default class LinksScreen extends React.Component {
                 </View>
           </Card>
         </View>
+      </ImageBackground>
       </ScrollView>
    )
   }
@@ -68,6 +72,12 @@ export default class LinksScreen extends React.Component {
     container: {
       flex: 1,
       backgroundColor: 'white',
+    },
+    mainwallpaper:{
+      flex: 1,
+      width: undefined,
+      height: undefined,
+      backgroundColor:'transparent',
     },
   });
   

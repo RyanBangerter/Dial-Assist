@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity, View, Text} from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity, View, Text,ImageBackground} from 'react-native';
 import { Card, SearchBar, Header, Icon} from 'react-native-elements';
 
 
@@ -18,6 +18,9 @@ export default class Foodcardscreen extends React.Component {
           centerComponent={{ text: 'Home', style: { color: '#fff' } }}
           rightComponent={{icon: 'exit-to-app', color: '#fff'}}
         />
+        <ImageBackground 
+        source={require('../assets/images/background.jpg')}
+        style ={styles.mainwallpaper}>
         <View>
           <View>
             <SearchBar
@@ -53,6 +56,7 @@ export default class Foodcardscreen extends React.Component {
                 </View>
             </Card>
         </View>
+      </ImageBackground>
       </ScrollView>
     );
   }
@@ -62,5 +66,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  mainwallpaper:{
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    backgroundColor:'transparent',
   },
 });

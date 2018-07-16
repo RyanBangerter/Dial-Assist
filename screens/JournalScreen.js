@@ -5,7 +5,7 @@ const users = [
   }
  ]
 import React from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity,ImageBackground } from 'react-native';
 import { View, Text, Image } from 'react-native';
 import { Card } from 'react-native-elements';
 import Dailyfluid from '../components/Dailyfluid';
@@ -29,7 +29,9 @@ export default class JournalScreen extends React.Component {
           centerComponent={{ text: 'Journal', style: { color: '#fff' } }}
           rightComponent={{icon: 'exit-to-app', color: '#fff'}}
         />
-       
+       <ImageBackground 
+        source={require('../assets/images/background.jpg')}
+        style ={styles.mainwallpaper}>
         {/* Daily fluid intake graph */}
             <View style = {{marginTop: 10}}>
                 <Text style = {{textAlign: 'center', fontSize: 20}}>Daily Fluid Intake In Liters</Text>
@@ -58,6 +60,7 @@ export default class JournalScreen extends React.Component {
                   </TouchableOpacity>  
                 </View>
             </Card>
+          <View style= {{marginBottom: 50}}>
             <Card title="Fluid">
                 <View style={{marginBottom: 10}}>
                   <TouchableOpacity onPress={() =>navigate('Fluidcard')}>
@@ -65,6 +68,8 @@ export default class JournalScreen extends React.Component {
                   </TouchableOpacity>  
                 </View>
             </Card>
+          </View>
+      </ImageBackground>
       </ScrollView>
     );
   }
@@ -80,5 +85,11 @@ const styles = StyleSheet.create({
   labs: {
     borderBottomWidth: 1,
     borderBottomColor: 'black',
+  },
+  mainwallpaper:{
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    backgroundColor:'transparent',
   },
 });
