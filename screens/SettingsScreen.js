@@ -20,7 +20,7 @@ export default class SettingsScreen extends React.Component {
             onPress={() => navigate('Home')}
             />
           }
-          centerComponent={{ text: 'Journal', style: { color: '#fff' } }}
+          centerComponent={{ text: 'Settings', style: { color: '#fff' } }}
           rightComponent={ 
           <Icon
             name="exit-to-app"

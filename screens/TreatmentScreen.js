@@ -23,7 +23,7 @@ export default class TreatmentScreen extends React.Component {
             onPress={() => navigate('Home')}
             />
           }
-          centerComponent={{ text: 'Journal', style: { color: '#fff' } }}
+          centerComponent={{ text: 'Treatment Log', style: { color: '#fff' } }}
           rightComponent={ 
           <Icon
             name="exit-to-app"

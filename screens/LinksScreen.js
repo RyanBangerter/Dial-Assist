@@ -21,7 +21,7 @@ export default class LinksScreen extends React.Component {
             onPress={() => navigate('Home')}
             />
           }
-          centerComponent={{ text: 'Journal', style: { color: '#fff' } }}
+          centerComponent={{ text: 'Links', style: { color: '#fff' } }}
           rightComponent={ 
           <Icon
             name="exit-to-app"
