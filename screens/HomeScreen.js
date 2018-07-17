@@ -33,12 +33,12 @@ export default class HomeScreen extends React.Component {
             <View>
               <Text style={{fontSize: 25, textAlign: 'center', fontFamily: 'serif'}}>Welcome To Dial-Assist!</Text>
             </View>
-            <View style = {{marginTop: 10}}>
-              <Text style = {{textAlign: 'center'}}>Daily Fluid Intake In Liters</Text>
+            <View style = {{marginTop: 20}}>
+              <Text style = {{textAlign: 'center', fontSize: 20}}>Daily Fluid Intake In Liters</Text>
             </View>
             <DailyFluid/>
             <View style = {{flexDirection: 'row', justifyContent: 'center'}}>
-                <Text>Current Fluid Consumed = .7L</Text>
+                <Text style = {{color: 'rgb(3, 189, 196)', fontSize: 17}}>Current Fluid Consumed = .7L</Text>
             </View>
             <View style = {{paddingBottom: 20}}>
                 <Text style = {{textAlign: 'center'}}>Fluid Goal = 1L or 32FLoz</Text>
@@ -47,7 +47,7 @@ export default class HomeScreen extends React.Component {
 
             {/* weeklyfluid fluid intake graph */}
             <View  style = {{marginTop: 10}}>
-              <Text style = {{textAlign: 'center'}}>Weekly Fluid Intake In Liters</Text>
+              <Text style = {{textAlign: 'center', fontSize: 20, fontFamily: 'Roboto'}}>Weekly Fluid Intake In Liters</Text>
             </View>
             <Weeklyfluid/>
             <View style = {{flexDirection: 'row', justifyContent: 'space-between',paddingLeft: 10, paddingRight: 15}}>
@@ -68,8 +68,8 @@ export default class HomeScreen extends React.Component {
         
 
             {/* weeklyLabs graph */}
-            <View style = {{marginTop: 10}}>
-              <Text style = {{textAlign: 'center'}}>Weekly Labs Average</Text>
+            <View style = {{marginTop: 50}}>
+              <Text style = {{textAlign: 'center', fontSize: 20, fontFamily: 'Roboto'}}>Weekly Labs Average</Text>
             </View>
             <WeeklyLabs/>
             <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 40, paddingRight: 40}}>

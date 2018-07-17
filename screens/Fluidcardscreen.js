@@ -15,11 +15,21 @@ export default class Fluidcardscreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-       <Header
-          leftComponent={{ icon: 'home', color: '#fff' }}
+      <Header
           backgroundColor= '#2f95dc'
-          centerComponent={{ text: 'Home', style: { color: '#fff' } }}
-          rightComponent={{icon: 'exit-to-app', color: '#fff'}}
+          leftComponent={
+           <Icon name='home'
+            color='white'
+            onPress={() => navigate('Home')}
+            />
+          }
+          centerComponent={{ text: 'Add Fluid', style: { color: '#fff' } }}
+          rightComponent={ 
+          <Icon
+            name="exit-to-app"
+            color='white'
+            onPress={() => navigate('Auth')}
+          />} 
         />
         <ImageBackground 
         source={require('../assets/images/background.jpg')}
