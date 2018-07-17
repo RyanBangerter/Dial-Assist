@@ -1,6 +1,8 @@
 import React from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity, View, Text,ImageBackground} from 'react-native';
 import { Card, Header,SearchBar, Icon } from 'react-native-elements';
+import { Button } from 'react-native-elements';
+
 
 
 
@@ -23,7 +25,7 @@ export default class Fluidcardscreen extends React.Component {
         source={require('../assets/images/background.jpg')}
         style ={styles.mainwallpaper}>
         
-        <View>
+        <View style={{marginBottom: 320}}>
           <View>
             <SearchBar
               lightTheme
@@ -49,14 +51,39 @@ export default class Fluidcardscreen extends React.Component {
           </View>
             <Card title="Other Tracking Methods">
                 <View>
-                  <TouchableOpacity onPress={() =>navigate('Journal')}>
+                  <TouchableOpacity onPress={() =>navigate('')}>
                       <Text>Recent</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() =>navigate('')}>
                       <Text>Frequent</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() =>navigate('')}>
                       <Text>Favorites</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() =>navigate('')}>
                       <Text>Create New</Text>
                   </TouchableOpacity>  
                 </View>
             </Card>
+          <View style= {{flexDirection: 'row', justifyContent: 'center',marginTop: 10}} >
+            <Button
+              onPress={() =>navigate('Journal')}
+              icon={{
+                name: 'arrow-back',
+                size: 15,
+                color: 'white'
+              }}
+              buttonStyle={{
+                backgroundColor: "#2f95dc",
+                width: 320,
+                height: 45,
+                borderColor: "transparent",
+                borderWidth: 0,
+                borderRadius: 5
+              }}
+              title='Go Back'
+            />
+          </View>
         </View>
       </ImageBackground>
       </ScrollView>

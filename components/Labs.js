@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { BarChart, Grid, YAxis, XAxis } from 'react-native-svg-charts'
+import { BarChart, Grid, YAxis, } from 'react-native-svg-charts'
 import * as scale from 'd3-scale'
 import { Text } from 'react-native-svg'
 
@@ -12,20 +12,17 @@ class WeeklyLabs extends React.PureComponent {
             {
                 value: 6,
                 label: 'Potassium' ,
-                svg: { fill: 'rgb(244, 160, 65)'},
-                
+                svg: { fill: 'rgb(244, 160, 65)'}, 
             },
             {
                 value: 5,
                 label: 'Phosporus',
-                svg: { fill: 'rgb(244, 223, 65)'},
-                
+                svg: { fill: 'rgb(244, 223, 65)'},   
             },
             {
                 value: 7,
                 label: 'Albumen',
-                svg: { fill: 'rgb(244, 66, 66)'},
-                
+                svg: { fill: 'rgb(244, 66, 66)'}, 
             },
         ]
        
@@ -49,6 +46,7 @@ class WeeklyLabs extends React.PureComponent {
                     contentInset={{ top: 10, bottom: 10 }}
                     spacing={1}
                     gridMin={0}
+                   
                     
                     
                 >

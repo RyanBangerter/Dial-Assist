@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar, Card } from 'react-native-elements';
 import {ScrollView, View, TouchableOpacity, Text, StyleSheet, ImageBackground} from 'react-native';
-import { Header } from 'react-native-elements';
+import { Header, Icon } from 'react-native-elements';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
@@ -9,13 +9,24 @@ export default class SettingsScreen extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-         <Header
+          <Header
           backgroundColor= '#2f95dc'
-          leftComponent={{ icon: 'home', color: '#fff' }}
-          centerComponent={{ text: 'Settings', style: { color: '#fff' } }}
-          rightComponent={{icon: 'exit-to-app', color: '#fff'}}
+          leftComponent={
+           <Icon name='home'
+            color='white'
+            onPress={() => navigate('Home')}
+            />
+          }
+          centerComponent={{ text: 'Journal', style: { color: '#fff' } }}
+          rightComponent={ 
+          <Icon
+            name="exit-to-app"
+            color='white'
+            onPress={() => navigate('Auth')}
+          />} 
         />
         <ImageBackground 
         source={require('../assets/images/background.jpg')}
