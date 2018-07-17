@@ -41,6 +41,9 @@ import generaluseragreement from '../screens/generaluseragreementscreen';
 import HIPPAuseragreement from '../screens/HIPPAagreementscreen';
 import signupscreen from '../screens/signupscreen';
 
+
+
+
 export default createSwitchNavigator({
   AuthLoading: AuthLoadingScreen,
   Main: MainTabNavigator,
@@ -49,7 +52,10 @@ export default createSwitchNavigator({
   Foodcard: Foodcardscreen,
   Generalagreement: generaluseragreement,
   HIPPAagreement: HIPPAuseragreement,
-  signupscreen: signupscreen
+  signupscreen: signupscreen,
+  
+ 
+  
 },
 {
    initialRouteName: 'Auth',

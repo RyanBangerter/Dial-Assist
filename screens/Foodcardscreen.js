@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, TouchableOpacity, View, Text,ImageBackground} f
 import { Card, SearchBar, Header, Icon, Button} from 'react-native-elements';
 
 
+
 export default class Foodcardscreen extends React.Component {
   static navigationOptions = {
     title: 'Foodcard',
@@ -42,7 +43,8 @@ export default class Foodcardscreen extends React.Component {
           <View style = {{flexDirection: 'row', justifyContent: 'space-evenly'}}>
               <Card title="Scan Barcode">
                   <View style={{width: 110}}>
-                    <TouchableOpacity onPress={() =>navigate('')}>
+                    <TouchableOpacity >
+                        <Barcodescanner/>
                         <Icon name='camera-alt' />
                     </TouchableOpacity>  
                   </View>
