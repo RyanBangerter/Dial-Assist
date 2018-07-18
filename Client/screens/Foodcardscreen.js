@@ -4,6 +4,9 @@ import { Card, SearchBar, Header, Icon, Button} from 'react-native-elements';
 
 
 
+
+
+
 export default class Foodcardscreen extends React.Component {
   static navigationOptions = {
     title: 'Foodcard',
@@ -33,6 +36,7 @@ export default class Foodcardscreen extends React.Component {
         source={require('../assets/images/background.jpg')}
         style ={styles.mainwallpaper}>
         <View style={{marginBottom: 320}}>
+        
           <View>
             <SearchBar
               lightTheme
@@ -44,7 +48,6 @@ export default class Foodcardscreen extends React.Component {
               <Card title="Scan Barcode">
                   <View style={{width: 110}}>
                     <TouchableOpacity >
-                        <Barcodescanner/>
                         <Icon name='camera-alt' />
                     </TouchableOpacity>  
                   </View>
