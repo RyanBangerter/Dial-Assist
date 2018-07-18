@@ -41,12 +41,16 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     width: 300,
     marginBottom: 20,
-    borderRadius:100
+    borderRadius: 100
 },
-buttonText:{
+  buttonText:{
     textAlign: 'center',
     color: 'white',
     fontWeight: '700'
+},
+  text:{
+    textAlign: 'center',
+    marginBottom: 3
 },
   mainwallpaper:{
     flex: 1,
