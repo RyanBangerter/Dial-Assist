@@ -10,6 +10,7 @@ import { View, Text, Image } from 'react-native';
 import { Card, Icon } from 'react-native-elements';
 import Dailyfluid from '../components/Dailyfluid';
 import { Header } from 'react-native-elements';
+import MonthlyNutrients from '../components/MonthlyNutrients';
 
 
 
@@ -49,6 +50,18 @@ export default class JournalScreen extends React.Component {
                 <Text style = {{textAlign: 'center', fontSize: 20}}>Daily Fluid Intake In Liters</Text>
             </View>
             <Dailyfluid/>
+            <View style = {{flexDirection: 'row', justifyContent: 'center'}}>
+                <Text>Current Fluid Consumed = .7L</Text>
+            </View>
+            <View style = {{paddingBottom: 20}}>
+                <Text style = {{textAlign: 'center'}}>Fluid Goal = 1L or 32FLoz</Text>
+            </View>
+
+            {/* Monthly nutrient intake graph */}
+            <View style = {{marginTop: 10}}>
+                <Text style = {{textAlign: 'center', fontSize: 20}}>Nurient intake over the past month</Text>
+            </View>
+            <MonthlyNutrients/>
             <View style = {{flexDirection: 'row', justifyContent: 'center'}}>
                 <Text>Current Fluid Consumed = .7L</Text>
             </View>
