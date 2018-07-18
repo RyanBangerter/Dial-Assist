@@ -1,13 +1,12 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
-  "private": true,
-  "scripts": {
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
-  },
-  "jest": {
-    "preset": "jest-expo"
-  },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.38.0",
     "@expo/samples": "2.1.1",
     "expo": "^28.0.0",
     "react": "16.3.1",
