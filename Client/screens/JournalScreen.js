@@ -59,7 +59,7 @@ export default class JournalScreen extends React.Component {
 
             {/* Monthly nutrient intake graph */}
             <View style = {{marginTop: 10}}>
-                <Text style = {{textAlign: 'center', fontSize: 20}}>Daily Fluid Intake In Liters</Text>
+                <Text style = {{textAlign: 'center', fontSize: 20}}>Nurient intake over the past month</Text>
             </View>
             <MonthlyNutrients/>
             <View style = {{flexDirection: 'row', justifyContent: 'center'}}>

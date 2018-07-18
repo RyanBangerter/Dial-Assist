@@ -35,16 +35,16 @@ class MonthlyNutrients extends React.PureComponent {
                     contentInset={verticalContentInset}
                     svg={{ stroke: 'rgb(255, 0, 0)' }}
                 >
-                    {/* <Grid/> */}
+                    <Grid/>
                 </LineChart>
-                <LineChart
+                {/* <LineChart
                     style={{ flex: 1 }}
                     data={data2}
                     contentInset={verticalContentInset}
                     svg={{ stroke: 'rgb(0, 255, 0)' }}
                 >
-                    {/* <Grid/> */}
-                </LineChart>
+                    <Grid/>
+                </LineChart> */}
                 <XAxis
                     style={{ marginHorizontal: -10, height: xAxisHeight }}
                     data={data1}
