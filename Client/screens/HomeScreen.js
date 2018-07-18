@@ -1,11 +1,11 @@
 import React from 'react';
-import {Platform,ScrollView,StyleSheet,Text,TouchableOpacity,View,Image,ImageBackground,KeyboardAvoidingView,
+import {Alert,ScrollView,StyleSheet,Text,TouchableOpacity,View,Image,ImageBackground,KeyboardAvoidingView,
 } from 'react-native';
-import { WebBrowser } from 'expo';
+import {navigate} from 'react-navigation'
 import WeeklyLabs from '../components/Labs';
 import Weeklyfluid from '../components/WeeklyFluid';
 import DailyFluid from '../components/Dailyfluid';
-import { Header } from 'react-native-elements';
+import { Header, Icon } from 'react-native-elements';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -13,176 +13,93 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
         <Header
           backgroundColor= '#2f95dc'
-          centerComponent={{ text: 'Home', style: { color: '#fff' } }}
-          rightComponent={{icon: 'exit-to-app', color: '#fff'}}
+          centerComponent={{ text: 'Home', style: { color: '#fff' }}}
+          rightComponent={ <Icon
+            name="exit-to-app"
+            color='white'
+            onPress={() => navigate('Auth')}
+          />} 
+         
         />
+        <ImageBackground 
+        source={require('../assets/images/background.jpg')}
+        style ={styles.mainwallpaper}>
             {/* Daily fluid intake graph */}
-            <View style = {{marginTop: 10}}>
-              <Text style = {{textAlign: 'center'}}>Daily Fluid Intake In Liters</Text>
+            <View>
+              <Text style={{fontSize: 25, textAlign: 'center', fontFamily: 'serif'}}>Welcome To Dial-Assist!</Text>
+            </View>
+            <View style = {{marginTop: 20}}>
+              <Text style = {{textAlign: 'center', fontSize: 20}}>Daily Fluid Intake In Liters</Text>
             </View>
             <DailyFluid/>
+            <View style = {{flexDirection: 'row', justifyContent: 'center'}}>
+                <Text style = {{color: 'rgb(3, 189, 196)', fontSize: 17}}>Current Fluid Consumed = .7L</Text>
+            </View>
+            <View style = {{paddingBottom: 20}}>
+                <Text style = {{textAlign: 'center'}}>Fluid Goal = 1L or 32FLoz</Text>
+            </View>
           
 
             {/* weeklyfluid fluid intake graph */}
             <View  style = {{marginTop: 10}}>
-              <Text style = {{textAlign: 'center'}}>Weekly Fluid Intake In Liters</Text>
+              <Text style = {{textAlign: 'center', fontSize: 20, fontFamily: 'Roboto'}}>Weekly Fluid Intake In Liters</Text>
             </View>
             <Weeklyfluid/>
+            <View style = {{flexDirection: 'row', justifyContent: 'space-between',paddingLeft: 10, paddingRight: 15}}>
+              <Text>Mon</Text>
+              <Text>Tue</Text>
+              <Text>Wed</Text>
+              <Text>Thu</Text>
+              <Text>Fri</Text>
+              <Text>Sat</Text>
+              <Text>Sun</Text>
+            </View>
+            <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 40, paddingRight: 40}}>
+              <Text>High Level</Text>
+              <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 66, 66)'}}></View>
+              <Text>Perfect Level</Text>
+              <View style={{width: 15, height: 15, backgroundColor: 'rgb(27, 51, 145)'}}></View>
+            </View>
         
 
             {/* weeklyLabs graph */}
-            <View style = {{marginTop: 10}}>
-              <Text style = {{textAlign: 'center'}}>Weekly Labs</Text>
+            <View style = {{marginTop: 50}}>
+              <Text style = {{textAlign: 'center', fontSize: 20, fontFamily: 'Roboto'}}>Weekly Labs Average</Text>
             </View>
             <WeeklyLabs/>
+            <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 40, paddingRight: 40}}>
+              <Text>High Level</Text>
+              <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 66, 66)'}}></View>
+              <Text>Perfect Level</Text>
+              <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 223, 65)'}}></View>
+              <Text>Low Level</Text>
+              <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 160, 65)'}}></View>
+            </View>
+      </ImageBackground>
       </ScrollView>
     )
 }
 
 
-    // return (
-    //   // <Login/>
-    //   <KeyboardAvoidingView behavior='padding' style={styles.container}>
-    //     <ImageBackground 
-    //     source={require('../assets/images/background.jpg')}
-    //     style ={styles.mainwallpaper}>
-    //       <View style={styles.logoContainer}>
-    //           <Image 
-    //           style={styles.logo}
-    //           source={require('../assets/images/logo3.png')}
-    //           />
-    //       </View>
-    //       <View>
-
-    //       </View>
-    //     </ImageBackground>
-    //   </KeyboardAvoidingView>
-    // );
   }
   const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: 'white',
     },
+    mainwallpaper:{
+      flex: 1,
+      width: undefined,
+      height: undefined,
+      backgroundColor:'transparent',
+    },
   });
 
   
 
-  // _handleLearnMorePress = () => {
-  //   WebBrowser.openBrowserAsync('https://play.google.com/store?hl=en');
-  // };
-
-  // _handleHelpPress = () => {
-  //   WebBrowser.openBrowserAsync(
-  //     'https://healthcare.utah.edu/dialysis/'
-  //   );
-  // };
-
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//   },
-//   logo:{
-//     width: 350,
-//     height: 350
-//   },
-//   mainwallpaper:{
-//     flex: 1,
-//     width: undefined,
-//     height: undefined,
-//     backgroundColor:'transparent',
-//   },
-//   developmentModeText: {
-//     marginBottom: 20,
-//     color: 'rgba(0,0,0,0.4)',
-//     fontSize: 14,
-//     lineHeight: 19,
-//     textAlign: 'center',
-//   },
-//   contentContainer: {
-//     paddingTop: 30,
-//   },
-//   welcomeContainer: {
-//     alignItems: 'center',
-//     marginTop: 10,
-//     marginBottom: 20,
-//   },
-//   welcomeImage: {
-//     width: 100,
-//     height: 80,
-//     resizeMode: 'contain',
-//     marginTop: 3,
-//     marginLeft: -10,
-//   },
-//   logoContainer:{
-//     alignItems: 'center',
-//     flexGrow: 1,
-//     justifyContent: 'center'
-//   },
-//   getStartedContainer: {
-//     alignItems: 'center',
-//     marginHorizontal: 50,
-//   },
-//   homeScreenFilename: {
-//     marginVertical: 7,
-//   },
-//   codeHighlightText: {
-//     color: 'rgba(96,100,109, 0.8)',
-//   },
-//   codeHighlightContainer: {
-//     backgroundColor: 'rgba(0,0,0,0.05)',
-//     borderRadius: 3,
-//     paddingHorizontal: 4,
-//   },
-//   getStartedText: {
-//     fontSize: 17,
-//     color: 'rgba(96,100,109, 1)',
-//     lineHeight: 24,
-//     textAlign: 'center',
-//   },
-//   tabBarInfoContainer: {
-//     position: 'absolute',
-//     bottom: 0,
-//     left: 0,
-//     right: 0,
-//     ...Platform.select({
-//       ios: {
-//         shadowColor: 'black',
-//         shadowOffset: { height: -3 },
-//         shadowOpacity: 0.1,
-//         shadowRadius: 3,
-//       },
-//       android: {
-//         elevation: 20,
-//       },
-//     }),
-//     alignItems: 'center',
-//     backgroundColor: '#fbfbfb',
-//     paddingVertical: 20,
-//   },
-//   tabBarInfoText: {
-//     fontSize: 17,
-//     color: 'rgba(96,100,109, 1)',
-//     textAlign: 'center',
-//   },
-//   navigationFilename: {
-//     marginTop: 5,
-//   },
-//   helpContainer: {
-//     marginTop: 15,
-//     alignItems: 'center',
-//   },
-//   helpLink: {
-//     paddingVertical: 15,
-//   },
-//   helpLinkText: {
-//     fontSize: 14,
-//     color: '#2e78b7',
-//   },
-// });
+ 

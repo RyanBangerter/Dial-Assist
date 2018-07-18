@@ -5,9 +5,9 @@ const users = [
   }
  ]
 import React from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity,ImageBackground } from 'react-native';
 import { View, Text, Image } from 'react-native';
-import { Card } from 'react-native-elements';
+import { Card, Icon } from 'react-native-elements';
 import Dailyfluid from '../components/Dailyfluid';
 import { Header } from 'react-native-elements';
 
@@ -25,30 +25,63 @@ export default class JournalScreen extends React.Component {
       <ScrollView style={styles.container}>
        <Header
           backgroundColor= '#2f95dc'
-          leftComponent={{ icon: 'home', color: '#fff' }}
+          leftComponent={
+           <Icon name='home'
+            color='white'
+            onPress={() => navigate('Home')}
+            />
+          }
           centerComponent={{ text: 'Journal', style: { color: '#fff' } }}
-          rightComponent={{icon: 'exit-to-app', color: '#fff'}}
+          rightComponent={ 
+          <Icon
+            name="exit-to-app"
+            color='white'
+            onPress={() => navigate('Auth')}
+          />} 
         />
-       
+       <ImageBackground 
+        source={require('../assets/images/background.jpg')}
+        style ={styles.mainwallpaper}>
+
+
         {/* Daily fluid intake graph */}
             <View style = {{marginTop: 10}}>
                 <Text style = {{textAlign: 'center', fontSize: 20}}>Daily Fluid Intake In Liters</Text>
             </View>
             <Dailyfluid/>
-            <View style = {{paddingBottom: 50}}>
+            <View style = {{flexDirection: 'row', justifyContent: 'center'}}>
+                <Text>Current Fluid Consumed = .7L</Text>
+            </View>
+            <View style = {{paddingBottom: 20}}>
                 <Text style = {{textAlign: 'center'}}>Fluid Goal = 1L or 32FLoz</Text>
             </View>
+
+
         {/* Labs */}
-            <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 50, paddingRight: 50}}>
-              <Text style = {styles.labs} >6</Text>
-              <Text style = {styles.labs} >7</Text>
-              <Text style = {styles.labs} >8</Text>
-            </View>
-            <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 50, paddingRight: 50}}>
-              <Text >K</Text>
-              <Text >P</Text>
-              <Text >A</Text>
-            </View>
+            <Card title='Your Labs'>
+              <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 50, paddingRight: 50}}>
+                <TouchableOpacity>
+                  <Text style = {styles.labs} onPress={() =>alert('Potassium normal is 3.5-5.5 mEq/L')} >6</Text>
+                </TouchableOpacity>
+                  <Text style = {styles.labs} onPress={() =>alert('Phosporus normal is  2.5 to 4.5 mg/dL')} >7</Text>
+                <TouchableOpacity>
+                  <Text style = {styles.labs} onPress={() =>alert('Albumen normal is greater than 4 g/dL')} >8</Text>
+                </TouchableOpacity>
+              </View>
+              <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 50, paddingRight: 50}}>
+                <TouchableOpacity> 
+                  <Text onPress={() =>alert('Potassium normal is 3.5-5.5 mEq/L')}>K</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Text onPress={() =>alert('Phosporus normal is  2.5 to 4.5 mg/dL')} >P</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Text onPress={() =>alert('Albumen normal is greater than 4 g/dL')}>A</Text>
+                </TouchableOpacity>
+              </View>
+            </Card>
+
+
 
         {/* Cards */}
             <Card title="Food">
@@ -58,13 +91,16 @@ export default class JournalScreen extends React.Component {
                   </TouchableOpacity>  
                 </View>
             </Card>
+          <View style= {{marginBottom: 50}}>
             <Card title="Fluid">
-                <View>
+                <View style={{marginBottom: 10}}>
                   <TouchableOpacity onPress={() =>navigate('Fluidcard')}>
                       <Text>Add Fluid </Text>
                   </TouchableOpacity>  
                 </View>
             </Card>
+          </View>
+      </ImageBackground>
       </ScrollView>
     );
   }
@@ -80,5 +116,11 @@ const styles = StyleSheet.create({
   labs: {
     borderBottomWidth: 1,
     borderBottomColor: 'black',
+  },
+  mainwallpaper:{
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    backgroundColor:'transparent',
   },
 });

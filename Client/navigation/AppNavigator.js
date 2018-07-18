@@ -37,16 +37,28 @@ import MainTabNavigator from './MainTabNavigator';
 import Login from '../screens/LoginScreen';
 import Fluidcardscreen from '../screens/Fluidcardscreen';
 import Foodcardscreen from '../screens/Foodcardscreen';
+import generaluseragreement from '../screens/generaluseragreementscreen';
+import HIPPAuseragreement from '../screens/HIPPAagreementscreen';
+import signupscreen from '../screens/signupscreen';
+
+
+
 
 export default createSwitchNavigator({
   AuthLoading: AuthLoadingScreen,
   Main: MainTabNavigator,
   Auth: Login,
   Fluidcard: Fluidcardscreen,
-  Foodcard: Foodcardscreen
+  Foodcard: Foodcardscreen,
+  Generalagreement: generaluseragreement,
+  HIPPAagreement: HIPPAuseragreement,
+  signupscreen: signupscreen,
+  
+ 
+  
 },
 {
-   initialRouteName: 'Main',
+   initialRouteName: 'Auth',
 
 });
 const styles = StyleSheet.create({
