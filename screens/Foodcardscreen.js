@@ -44,7 +44,6 @@ export default class Foodcardscreen extends React.Component {
               <Card title="Scan Barcode">
                   <View style={{width: 110}}>
                     <TouchableOpacity >
-                        <Barcodescanner/>
                         <Icon name='camera-alt' />
                     </TouchableOpacity>  
                   </View>
