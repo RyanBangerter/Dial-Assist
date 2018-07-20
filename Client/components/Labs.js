@@ -29,7 +29,7 @@ class WeeklyLabs extends React.PureComponent {
         
 
         return (
-            <View style={{ flexDirection: 'row', height: 200, paddingVertical: 16, paddingHorizontal: 10 }}>
+            <View style={{ flexDirection: 'row', height: 200, paddingVertical: 16, paddingHorizontal: 10,marginTop: 5}}>
                 <YAxis
                     data={data}
                     yAccessor={({ index }) => index}

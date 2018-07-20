@@ -29,7 +29,7 @@ class MonthlyFluid extends React.PureComponent {
         )
 
         return (
-            <View style={{ flexDirection: 'row', height: 200, paddingVertical: 0 }}>
+            <View style={{ flexDirection: 'row', height: 200, paddingVertical: 0, marginTop: 20 }}>
                 <BarChart
                     style={{ flex: 1 }}
                     data={data}

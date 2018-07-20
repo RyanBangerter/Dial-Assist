@@ -2,10 +2,10 @@ import React from 'react';
 import {Alert,ScrollView,StyleSheet,Text,TouchableOpacity,View,Image,ImageBackground,KeyboardAvoidingView,
 } from 'react-native';
 import {navigate} from 'react-navigation'
-import WeeklyLabs from '../components/Labs';
-import Weeklyfluid from '../components/WeeklyFluid';
 import DailyFluid from '../components/Dailyfluid';
 import { Header, Icon } from 'react-native-elements';
+import WeeklyFluidmodal from '../components/WeeklyFluidmodal';
+import Weeklylabmodal from '../components/Weeklylabmodal';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -49,29 +49,17 @@ export default class HomeScreen extends React.Component {
             <View  style = {{marginTop: 10}}>
               <Text style = {{textAlign: 'center', fontSize: 20, fontFamily: 'Roboto'}}>Weekly Fluid Intake In Liters</Text>
             </View>
-            <Weeklyfluid/>
-            <View style = {{flexDirection: 'row', justifyContent: 'space-between',paddingLeft: 10, paddingRight: 15}}>
-              <Text>Mon</Text>
-              <Text>Tue</Text>
-              <Text>Wed</Text>
-              <Text>Thu</Text>
-              <Text>Fri</Text>
-              <Text>Sat</Text>
-              <Text>Sun</Text>
-            </View>
-            <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 40, paddingRight: 40}}>
-              <Text>High Level</Text>
-              <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 66, 66)'}}></View>
-              <Text>Perfect Level</Text>
-              <View style={{width: 15, height: 15, backgroundColor: 'rgb(27, 51, 145)'}}></View>
-            </View>
-        
+            <WeeklyFluidmodal/>
+            
+
 
             {/* weeklyLabs graph */}
-            <View style = {{marginTop: 50}}>
+            <View style = {{marginTop: 20}}>
               <Text style = {{textAlign: 'center', fontSize: 20, fontFamily: 'Roboto'}}>Weekly Labs Average</Text>
             </View>
-            <WeeklyLabs/>
+            <Weeklylabmodal/>
+            <View style= {{marginBottom: 55}}></View>
+            {/* <WeeklyLabs/>
             <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 40, paddingRight: 40}}>
               <Text>High Level</Text>
               <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 66, 66)'}}></View>
@@ -79,7 +67,7 @@ export default class HomeScreen extends React.Component {
               <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 223, 65)'}}></View>
               <Text>Low Level</Text>
               <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 160, 65)'}}></View>
-            </View>
+            </View> */}
       </ImageBackground>
       </ScrollView>
     )
