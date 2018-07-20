@@ -21,6 +21,7 @@ export default class JournalScreen extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    
     return (
       <ScrollView style={styles.container}>
        <Header
@@ -50,7 +51,7 @@ export default class JournalScreen extends React.Component {
             </View>
             <Dailyfluid/>
             <View style = {{flexDirection: 'row', justifyContent: 'center'}}>
-                <Text>Current Fluid Consumed = .7L</Text>
+                <Text style = {{color: 'rgb(3, 189, 196)', fontSize: 17}}>Current Fluid Consumed = .7L</Text>
             </View>
             <View style = {{paddingBottom: 20}}>
                 <Text style = {{textAlign: 'center'}}>Fluid Goal = 1L or 32FLoz</Text>
@@ -96,7 +97,17 @@ export default class JournalScreen extends React.Component {
                 <View style={{marginBottom: 10}}>
                   <TouchableOpacity onPress={() =>navigate('Fluidcard')}>
                       <Text>Add Fluid </Text>
-                  </TouchableOpacity>  
+                  </TouchableOpacity> 
+                  {/* <Rating
+                        showRating
+                        type="star"
+                        fractions={1}
+                        startingValue={3.6}
+                        readonly
+                        imageSize={10}
+                        onFinishRating={this.ratingCompleted}
+                        style={{ paddingVertical: 10 }}
+                      />  */}
                 </View>
             </Card>
           </View>

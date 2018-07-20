@@ -14,7 +14,7 @@ export default class TreatmentScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <KeyboardAvoidingView style={styles.container} behavior= 'padding' enabled>
+      <KeyboardAvoidingView style={styles.container}  enabled>
         <Header
           backgroundColor= '#2f95dc'
           leftComponent={

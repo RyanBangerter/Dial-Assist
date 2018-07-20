@@ -43,21 +43,21 @@ export default class SettingsScreen extends React.Component {
         <View style={{marginBottom: 120}}>
           <Card title="Profile Name">
                 <View>
-                  <TouchableOpacity onPress={() =>navigate('Foodcard')}>
+                  <TouchableOpacity onPress={() =>navigate('')}>
                       <Text>Change Profile Name</Text>
                   </TouchableOpacity>  
                 </View>
           </Card>
           <Card title="User Name">
                 <View>
-                  <TouchableOpacity onPress={() =>navigate('Foodcard')}>
+                  <TouchableOpacity onPress={() =>navigate('')}>
                       <Text>Change User Name</Text>
                   </TouchableOpacity>  
                 </View>
           </Card>
           <Card title="Password">
                 <View>
-                  <TouchableOpacity onPress={() =>navigate('Foodcard')}>
+                  <TouchableOpacity onPress={() =>navigate('')}>
                       <Text>Change Password</Text>
                   </TouchableOpacity>  
                 </View>
