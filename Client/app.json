@@ -10,7 +10,7 @@
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "splash": {
-      "image": "https://media.giphy.com/media/feN0YJbVs0fwA/giphy-downsized.gif",
+      "image": "./assets/images/new.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
