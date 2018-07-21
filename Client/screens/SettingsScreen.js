@@ -35,7 +35,7 @@ export default class SettingsScreen extends React.Component {
           <Avatar
             xlarge
             rounded
-            source={{uri: "https://photos.gograph.com/thumbs/CSP/CSP692/healthy-kidney-mascot-vector-art_k21547110.jpg"}}
+            title="PIC"
             onPress={() => alert("Works!")}
             activeOpacity={0.7}
           />
