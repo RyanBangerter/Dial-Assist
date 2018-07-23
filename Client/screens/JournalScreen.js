@@ -64,7 +64,7 @@ export default class JournalScreen extends React.Component {
                 <TouchableOpacity>
                   <Text style = {styles.labs} onPress={() =>alert('Potassium normal is 3.5-5.5 mEq/L')} >6</Text>
                 </TouchableOpacity>
-                  <Text style = {styles.labs} onPress={() =>alert('Phosporus normal is  2.5 to 4.5 mg/dL')} >7</Text>
+                  <Text style = {styles.labs} onPress={() =>alert('Phosphorus normal is  2.5 to 4.5 mg/dL')} >7</Text>
                 <TouchableOpacity>
                   <Text style = {styles.labs} onPress={() =>alert('Albumen normal is greater than 4 g/dL')} >8</Text>
                 </TouchableOpacity>
@@ -74,7 +74,7 @@ export default class JournalScreen extends React.Component {
                   <Text onPress={() =>alert('Potassium normal is 3.5-5.5 mEq/L')}>K</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                  <Text onPress={() =>alert('Phosporus normal is  2.5 to 4.5 mg/dL')} >P</Text>
+                  <Text onPress={() =>alert('Phosphorus normal is  2.5 to 4.5 mg/dL')} >P</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
                   <Text onPress={() =>alert('Albumen normal is greater than 4 g/dL')}>A</Text>

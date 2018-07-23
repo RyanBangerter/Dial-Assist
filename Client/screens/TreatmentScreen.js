@@ -1,7 +1,8 @@
 import React from 'react';
 import { ScrollView, StyleSheet, KeyboardAvoidingView, Text, View, ImageBackground } from 'react-native';
-import { FormLabel, FormInput, FormValidationMessage, Button, Icon } from 'react-native-elements'
-import { Header } from 'react-native-elements';
+import { FormLabel, FormInput, FormValidationMessage, Button, Icon, Header, Card } from 'react-native-elements'
+
+
 
 
 
@@ -34,49 +35,23 @@ export default class TreatmentScreen extends React.Component {
         <ImageBackground 
         source={require('../assets/images/background.jpg')}
         style ={styles.mainwallpaper}>
-        <View>
-          <Text style = {{textAlign: 'center'}}>Before Dialysis</Text>
+        <Card>
+            <View>
+              <Text>Treatment History</Text>
+            </View>
+        </Card>
+        <View style={{ marginTop: 10}}>
+            <Button 
+              backgroundColor= '#2f95dc'
+              raised
+              onPress={() =>navigate('Treatmentform')}
+              title='Add Treatment' />
         </View>
-        {/* Before Treatment */}
-        {/* Suggested fluid to remove field */}
-        <FormLabel>Suggested Fluid To Remove</FormLabel>
-          <FormInput onChangeText={_Sfluid}  placeholder='Fluid in L' />
-          <FormValidationMessage></FormValidationMessage>
-
-         {/*Actual fluid to remove field  */}
-        <FormLabel>Actual Fluid To Remove</FormLabel>
-          <FormInput onChangeText={_Afluid}  placeholder='Fluid in L' />
-          <FormValidationMessage></FormValidationMessage>
-        <View>
-          <Text style = {{textAlign: 'center'}}>After Dialysis</Text>
-        </View>
-        {/* After Treatment */}
-        {/* Blood volume processed */}
-        <FormLabel>Blood Volume Processed</FormLabel>
-          <FormInput onChangeText={_BVP}  placeholder='Volume in L' />
-          <FormValidationMessage></FormValidationMessage>
-        
-        {/* Total fluid removed */}
-        <FormLabel>Total Fluid Removed</FormLabel>
-          <FormInput onChangeText={_Tfluid}  placeholder='Fluid in L' style={{marginLeft: 50}} />
-          <FormValidationMessage></FormValidationMessage>
-          <Button 
-          backgroundColor= '#2f95dc'
-          raised
-          title='Submit' />
       </ImageBackground>
       </KeyboardAvoidingView>
     );
   }
 }
-  _Sfluid = () => {
-  };
-  _Afluid = () => {
-  };
-  _BVP = () => {
-  };
-  _Tfluid = () => {
-  };
 
 const styles = StyleSheet.create({
   container: {

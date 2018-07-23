@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { View, StyleSheet, TouchableOpacity, Text, StatusBar, Alert } from 'react-native'
 import LinksScreen from '../screens/LinksScreen';
 import {createStackNavigator} from 'react-navigation';
+import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
+
 const Signup = createStackNavigator({
     Home: { screen: LinksScreen }
   });
@@ -16,7 +18,7 @@ export default class Loginform extends Component {
         </TouchableOpacity>
         <Text style={styles.text}>Got a Dial-Assist account?</Text>
         <TouchableOpacity style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>Login</Text>
+              <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
       </View>
     )

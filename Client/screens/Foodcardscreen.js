@@ -7,6 +7,7 @@ import { Card, SearchBar, Header, Icon, Button} from 'react-native-elements';
 
 
 
+
 export default class Foodcardscreen extends React.Component {
   static navigationOptions = {
     title: 'Foodcard',
@@ -47,14 +48,14 @@ export default class Foodcardscreen extends React.Component {
           <View style = {{flexDirection: 'row', justifyContent: 'space-evenly'}}>
               <Card title="Scan Barcode">
                   <View style={{width: 110}}>
-                    <TouchableOpacity >
+                    <TouchableOpacity onPress={() =>navigate('barcodeScanner')}>
                         <Icon name='camera-alt' />
                     </TouchableOpacity>  
                   </View>
               </Card>
               <Card title="Categories">
                   <View style={{width: 110}}>
-                    <TouchableOpacity onPress={() =>navigate('')}>
+                    <TouchableOpacity onPress={() =>navigate('Foodcategories')}>
                         <Icon name='list'/>
                     </TouchableOpacity>  
                   </View>
@@ -66,14 +67,8 @@ export default class Foodcardscreen extends React.Component {
                       <Text>Recent</Text>
                   </TouchableOpacity>
                   <TouchableOpacity onPress={() =>navigate('')}>
-                      <Text>Frequent</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() =>navigate('')}>
                       <Text>Favorites</Text>
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={() =>navigate('')}>
-                      <Text>Create New</Text>
-                  </TouchableOpacity>  
                 </View>
             </Card>
             <View style= {{flexDirection: 'row', justifyContent: 'center',marginTop: 10}} >

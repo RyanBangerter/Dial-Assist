@@ -44,16 +44,16 @@ export default class Fluidcardscreen extends React.Component {
               placeholder='Type Here...' />
           </View>
           <View style = {{flexDirection: 'row', justifyContent: 'space-evenly'}}>
-              <Card title="Scan Barcode">
+          <Card title="Scan Barcode">
                   <View style={{width: 110}}>
-                    <TouchableOpacity onPress={() =>navigate('')}>
+                    <TouchableOpacity onPress={() =>navigate('barcodeScanner')}>
                         <Icon name='camera-alt' />
                     </TouchableOpacity>  
                   </View>
               </Card>
               <Card title="Categories">
                   <View style={{width: 110}}>
-                    <TouchableOpacity onPress={() =>navigate('')}>
+                    <TouchableOpacity onPress={() =>navigate('Fluidcategories')}>
                         <Icon name='list'/>
                     </TouchableOpacity>  
                   </View>
@@ -65,13 +65,7 @@ export default class Fluidcardscreen extends React.Component {
                       <Text>Recent</Text>
                   </TouchableOpacity>
                   <TouchableOpacity onPress={() =>navigate('')}>
-                      <Text>Frequent</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() =>navigate('')}>
                       <Text>Favorites</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() =>navigate('')}>
-                      <Text>Create New</Text>
                   </TouchableOpacity>  
                 </View>
             </Card>

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Image, KeyboardAvoidingView, ImageBackground, StatusBar, Text, TouchableOpacity} from 'react-native'
+
 export default class Login extends Component {
   render() {
     const { navigate } = this.props.navigation;
+    
     return (
       <KeyboardAvoidingView behavior='padding' style={styles.container}>
         <ImageBackground 
@@ -17,6 +19,7 @@ export default class Login extends Component {
           <View style={styles.formContainer}>
             <View>
               <StatusBar hidden={true}/>
+              
               <TouchableOpacity style={styles.buttonContainer}>
                     <Text style={styles.buttonText} onPress={() =>navigate('signupscreen')}>Sign Up</Text>
               </TouchableOpacity>
