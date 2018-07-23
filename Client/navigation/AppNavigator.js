@@ -40,7 +40,10 @@ import Foodcardscreen from '../screens/Foodcardscreen';
 import generaluseragreement from '../screens/generaluseragreementscreen';
 import HIPPAuseragreement from '../screens/HIPPAagreementscreen';
 import signupscreen from '../screens/signupscreen';
-
+import barcodeScanner from '../components/barcodeScanner';
+import Foodcategories from '../components/Foodcategories';
+import Fluidcategories from '../components/Fluidcategories';
+import Treatmentform from '../components/treatmentform';
 
 
 
@@ -53,9 +56,11 @@ export default createSwitchNavigator({
   Generalagreement: generaluseragreement,
   HIPPAagreement: HIPPAuseragreement,
   signupscreen: signupscreen,
-  
- 
-  
+  barcodeScanner: barcodeScanner,
+  Foodcategories: Foodcategories,
+  Fluidcategories: Fluidcategories,
+  Treatmentform: Treatmentform,
+
 },
 {
    initialRouteName: 'Auth',

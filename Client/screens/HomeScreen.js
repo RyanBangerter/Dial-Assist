@@ -59,15 +59,6 @@ export default class HomeScreen extends React.Component {
             </View>
             <Weeklylabmodal/>
             <View style= {{marginBottom: 55}}></View>
-            {/* <WeeklyLabs/>
-            <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingLeft: 40, paddingRight: 40}}>
-              <Text>High Level</Text>
-              <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 66, 66)'}}></View>
-              <Text>Perfect Level</Text>
-              <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 223, 65)'}}></View>
-              <Text>Low Level</Text>
-              <View style={{width: 15, height: 15, backgroundColor: 'rgb(244, 160, 65)'}}></View>
-            </View> */}
       </ImageBackground>
       </ScrollView>
     )
