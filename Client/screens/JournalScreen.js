@@ -10,7 +10,7 @@ import { View, Text, Image } from 'react-native';
 import { Card, Icon } from 'react-native-elements';
 import Dailyfluid from '../components/Dailyfluid';
 import { Header } from 'react-native-elements';
-import MonthlyNutrients from '../components/MonthlyNutrients';
+// import MonthlyNutrients from '../components/MonthlyNutrients';
 
 
 
@@ -59,7 +59,7 @@ export default class JournalScreen extends React.Component {
             </View>
 
             {/* Monthly nutrient intake graph */}
-            <View style = {{marginTop: 10}}>
+            {/* <View style = {{marginTop: 10}}>
                 <Text style = {{textAlign: 'center', fontSize: 20}}>Nurient intake over the past month</Text>
             </View>
             <MonthlyNutrients/>
@@ -68,7 +68,7 @@ export default class JournalScreen extends React.Component {
             </View>
             <View style = {{paddingBottom: 20}}>
                 <Text style = {{textAlign: 'center'}}>Fluid Goal = 1L or 32FLoz</Text>
-            </View>
+            </View> */}
 
 
         {/* Labs */}
