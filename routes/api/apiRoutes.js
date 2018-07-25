@@ -1,7 +1,6 @@
 //dependencies
 const db = require("../../models"),
-      router = require('express').Router(),
-      bCrypt = require('bcrypt-nodejs');
+      router = require('express').Router();
 
 //load the patient's journal
 router.get('/api/journal/:patientId', function(req, res){
