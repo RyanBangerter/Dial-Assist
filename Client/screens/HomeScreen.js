@@ -6,11 +6,26 @@ import DailyFluid from '../components/Dailyfluid';
 import { Header, Icon } from 'react-native-elements';
 import WeeklyFluidmodal from '../components/WeeklyFluidmodal';
 import Weeklylabmodal from '../components/Weeklylabmodal';
+import API from '../utils/API';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
+
+  state = {
+    user: 'defaultUser'
+  }
+
+  componentDidMount() {
+    this.getUser();
+  }
+
+  getUser = () => {
+    API.getPatient(1).then(response => this.setState({
+      user: response[0].username
+    }));
+  }
 
   render() {
     const { navigate } = this.props.navigation;
@@ -31,7 +46,7 @@ export default class HomeScreen extends React.Component {
         style ={styles.mainwallpaper}>
             {/* Daily fluid intake graph */}
             <View>
-              <Text style={{fontSize: 25, textAlign: 'center', fontFamily: 'serif'}}>Welcome To Dial-Assist!</Text>
+              <Text style={{fontSize: 25, textAlign: 'center', fontFamily: 'serif'}}>Welcome To Dial-Assist!, {this.state.user}</Text>
             </View>
             <View style = {{marginTop: 20}}>
               <Text style = {{textAlign: 'center', fontSize: 20}}>Daily Fluid Intake In Liters</Text>

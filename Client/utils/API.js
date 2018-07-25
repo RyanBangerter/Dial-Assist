@@ -1,13 +1,17 @@
 import axios from 'axios';
 
 export default {
+    //find a patient
+    getPatient: function(id) {
+        return axios.get('/api/patient/' + id);
+    },
     //Loads a patients journal
     getJournal: function(patientId) {
         return axios.get('/api/journal/' + patientId);
     },
     //Loads a patients treatment history
     getTreatments: function(patientId) {
-        return axios.get('/api/treatment' = patientId);
+        return axios.get('/api/treatment',  patientId);
     },
     //Adds a new patient
     addPatient: function(patient) {
