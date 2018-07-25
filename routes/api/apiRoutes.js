@@ -1,7 +1,18 @@
 //dependencies
 const db = require("../../models"),
-      router = require('express').Router(),
-      bCrypt = require('bcrypt-nodejs');
+      router = require('express').Router();
+
+//find a patient
+router.get('/api/patient/:id', function(req, res) {
+    const id = req.params.id;
+    db.Patient.findAll({
+        where: {
+            id: id
+        }
+    }).then(function(data) {
+        res.json(data);
+    })
+})
 
 //load the patient's journal
 router.get('/api/journal/:patientId', function(req, res){
