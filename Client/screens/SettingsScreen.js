@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar, Card } from 'react-native-elements';
 import {ScrollView, View, TouchableOpacity, Text, StyleSheet, ImageBackground} from 'react-native';
 import { Header, Icon } from 'react-native-elements';
+import Login from './LoginScreen';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {

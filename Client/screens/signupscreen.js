@@ -27,7 +27,7 @@ export default class Signup extends React.Component {
             <Button 
                 backgroundColor= '#2f95dc'
                 raised
-                title='Sign Up' onPress={() =>navigate('Generalagreement')}/>
+                title='Sign Up now' onPress={() =>navigate('Generalagreement')}/>
           </Card>
         </View>
       </ImageBackground>
