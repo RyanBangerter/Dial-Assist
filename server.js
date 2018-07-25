@@ -27,6 +27,10 @@ app.use(bodyParser.json());
 //     resave: true,
 //     saveUninitialized: true
 // }));
+// Handle / route
+app.get('/', (req, res) =>
+    res.send('Local server for dial-assist')
+)
 
 
 //routing
